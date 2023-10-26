@@ -11,6 +11,8 @@ import {
   IconProps,
 } from '@chakra-ui/react'
 
+import React from 'react';
+
 const Illustration = (props: IconProps) => {
   return (
     <Icon
@@ -825,6 +827,9 @@ const Illustration = (props: IconProps) => {
 }
 
 export default function CallToActionWithIllustration() {
+
+  const [color, setColor] = React.useState(false)
+
   return (
     <Container maxW={'5xl'}>
       <Stack
@@ -851,8 +856,9 @@ export default function CallToActionWithIllustration() {
             rounded={'full'}
             px={6}
             colorScheme={'orange'}
-            bg={'orange.400'}
-            _hover={{ bg: 'orange.500' }}>
+            bg={color ? 'orange.400' : 'green.400'}
+            _hover={color ? { bg: 'orange.500' } : { bg: 'green.500' }}
+            onClick={() => setColor(!color)}>
             Get started
           </Button>
           <Button rounded={'full'} px={6}>

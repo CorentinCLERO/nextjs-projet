@@ -4,10 +4,13 @@ import { Inter } from 'next/font/google'
 import WithSubnavigation from './components/navbar'
 import CallToActionWithIllustration from './components/hero'
 import LargeWithLogoCentered from './components/footer'
+import { NextPageContext } from 'next'
+import CallToActionWithAnnotation from './components/prouthero'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(props: any) {
+  console.log(props)
   return (
     <>
       <Head>
